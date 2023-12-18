@@ -50,19 +50,19 @@ export const CryptoDetails = () => {
       onClick={close}
     >
       <div
-        className="w-[65%] h-[82%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative"
+        className="md:w-[80%] lg:w-[65%] overflow-x-hidden  scrollbar-thin scrollbar-thumb-gray-100 h-[82%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative"
         onClick={(e) => e.stopPropagation()}
       >
         {coinData ? (
-          <div className="flex items-center justify-between h-full w-full p-4">
-            <div className="flex flex-col w-[45%] h-full pr-2">
+          <div className="flex md:flex-row flex-col items-center justify-between lg:h-full h-auto w-full p-4">
+            <div className="flex flex-col w-full md:w-[45%] h-full pr-2">
               <div className="flex w-full items-center">
                 <img
                   className="w-[3rem] h-[3rem] mx-1.5"
                   src={coinData?.image?.large}
                   alt={coinData?.id}
                 />
-                <h1 className="text-xl capitalize font-medium">
+                <h1 className="text-md capitalize font-medium">
                   {coinData?.name}
                 </h1>
                 <span className="text-sm py-0.5 px-2.5 ml-2 bg-cyan text-cyan bg-opacity-25 rounded uppercase">
@@ -73,12 +73,12 @@ export const CryptoDetails = () => {
               <div className="flex w-full mt-6">
                 <div className="flex flex-col w-full">
                   <div className="flex justify-between">
-                    <span className="text-sm capitalize text-gray-100">
+                    <span className="text-[13px] capitalize text-gray-100">
                       Price
                     </span>
 
                     <div
-                      className={`text-sm px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25
+                      className={`text-[13px] px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25
                    ${
                      coinData?.market_data?.price_change_percentage_24h > 0
                        ? "bg-green text-green"
@@ -108,7 +108,7 @@ export const CryptoDetails = () => {
                     </div>
                   </div>
 
-                  <h2 className="text-lg font-bold">
+                  <h2 className="text-md font-medium">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -120,10 +120,10 @@ export const CryptoDetails = () => {
 
               <div className="flex w-full mt-4 justify-between">
                 <div className="flex flex-col">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     Market Cap
                   </span>
-                  <h2 className="text-base font-bold">
+                  <h2 className="text-sm font-semibold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -133,10 +133,10 @@ export const CryptoDetails = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     fully diluted valuation
                   </span>
-                  <h2 className="text-base font-bold">
+                  <h2 className="text-sm font-semibold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -150,10 +150,10 @@ export const CryptoDetails = () => {
               </div>
 
               <div className="flex flex-col w-full mt-4 justify-between">
-                <span className="text-sm capitalize text-gray-100">
+                <span className="text-[13px] capitalize text-gray-100">
                   Total volume
                 </span>
-                <h2 className="text-base font-bold">
+                <h2 className="text-sm font-semibold">
                   {new Intl.NumberFormat("en-IN", {
                     style: "currency",
                     currency: currency || "usd",
@@ -172,10 +172,10 @@ export const CryptoDetails = () => {
 
               <div className="flex w-full mt-4 justify-between">
                 <div className="flex flex-col">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     Low 24H
                   </span>
-                  <h2 className="text-base font-bold">
+                  <h2 className="text-sm font-semibold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -185,10 +185,10 @@ export const CryptoDetails = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     high 24H
                   </span>
-                  <h2 className="text-base font-bold">
+                  <h2 className="text-sm font-semibold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -201,10 +201,10 @@ export const CryptoDetails = () => {
 
               <div className="flex w-full mt-4 justify-between">
                 <div className="flex flex-col">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     max supply
                   </span>
-                  <h2 className="text-base font-bold">
+                  <h2 className="text-sm font-semibold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -214,10 +214,10 @@ export const CryptoDetails = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     circulating supply
                   </span>
-                  <h2 className="text-base font-bold">
+                  <h2 className="text-sm font-semibold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency || "usd",
@@ -248,7 +248,7 @@ export const CryptoDetails = () => {
                 </div>
 
                 <div className="flex flex-col content-start">
-                  <span className="text-sm capitalize text-gray-100">
+                  <span className="text-[13px] capitalize text-gray-100">
                     Sentiment
                   </span>
                   <div className="flex justify-between">
@@ -299,7 +299,7 @@ export const CryptoDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-[55%] h-full pl-3 ">
+            <div className="flex flex-col w-full mt-2 md:w-[55%] h-full pl-3 ">
               <Chart id={coinData?.id} />
 
               <div className="flex flex-col mt-4">
